@@ -40,10 +40,7 @@
   <span class="copyright-year">
     {{- $current := now.Format "2006" }}
     &copy; 
-    {{ if ne .Site.Params.since $current -}}
-      {{ .Site.Params.since }} - 
-    {{ end }}
-    {{- $current -}}
+    {{ .Site.Params.since }} - time.Now()
     <span class="heart"><i class="iconfont icon-heart"></i></span><!--
     --><span>{{if .Site.Copyright }}{{ .Site.Copyright | safeHTML }}{{ else }}{{ .Site.Author.name | safeHTML }}{{ end }}</span>
   </span>
